@@ -92,4 +92,4 @@ By addressing these areas, the Contacts Application can be transformed into a mo
 ![Redoc docs](./demo/redoc.png?raw=true "Redoc docs")
 
 ### Demo video
-![Demo video](./demo/demo.mov?raw=true "Demo")
+![Demo video](./demo/demo.mov)
