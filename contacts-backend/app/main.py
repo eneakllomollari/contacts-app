@@ -16,7 +16,11 @@ from redis_client import pubsub
 
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title=settings.PROJECT_NAME, version=settings.VERSION)
+app = FastAPI(
+    title=settings.PROJECT_NAME,
+    version=settings.VERSION,
+    summary="FastAPI-based backend for managing contacts",
+)
 
 background_tasks = []
 
@@ -63,8 +67,9 @@ async def startup_event():
 @app.on_event("shutdown")
 async def shutdown_event():
     for task in background_tasks:
-        task.cancel()  # Cancel the background task
-        await task  # Wait for the task to finish
+        logger.info('Canceling background task')
+        task.cancel()
+        await task
 
 
 @app.get("/", include_in_schema=False)

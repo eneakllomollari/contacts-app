@@ -49,8 +49,8 @@ For the sake of simplicity, authentication has not been implemented in this proj
 
 1. **PostgreSQL Setup**: Create a new PostgreSQL database named `contacts_db`. You can do this using the following command:
    ```bash
-psql -U postgres -c "CREATE DATABASE contacts_db;"
-```
+   psql -U postgres -c "CREATE DATABASE contacts_db;"
+   ```
    Replace `postgres` with your actual PostgreSQL username.
 2. **PostgreSQL Credentials**: Update the `.env` file with your PostgreSQL credentials:
    ```
@@ -77,12 +77,12 @@ To ensure code quality and consistency, the project uses the following tools:
 
 1. **Black**: A code formatter that ensures consistent code style throughout the project. To run Black, use the following command:
    ```bash
-black .
-```
+   black .
+   ```
 2. **Flake8**: A linter that checks for code errors and warnings. To run Flake8, use the following command:
    ```bash
-flake8 .
-```
+   flake8 .
+   ```
 
 ### Documentation
 
@@ -111,22 +111,3 @@ The project's infrastructure consists of the following components:
 4. **WebSocket Endpoint**: Establishes bi-directional communication between the server and connected clients, enabling real-time updates and notifications.
 
 By following these instructions, you can set up and run the Contacts API project, which provides a robust and scalable solution for managing contacts in real-time, ensuring data consistency across all users.
-
-## Future Improvements
-
-To further enhance the Contacts Application, several improvements can be considered:
-
-1. **Unit and API Tests**: Implementing comprehensive unit tests for the frontend and backend components, as well as API tests to ensure the integrity of the API endpoints, would significantly improve the application's reliability and maintainability.
-2. **Better API Documentation**: Enhancing the API documentation to include more detailed descriptions, request and response examples, and error handling information would make it easier for developers to integrate the API into their applications.
-3. **Profile Picture**: Adding the ability to upload and display a profile picture for each contact would enrich the user experience and provide a more personal touch.
-4. **Exporting Contacts**: Implementing a feature to export contacts in a CSV or vCard format would allow users to easily transfer their contacts to other devices or applications.
-5. **Additional Fields**: Including more fields such as address, birthday, or notes would provide users with a more comprehensive contact management system.
-6. **Multiple Phone Numbers/Emails**: Allowing users to add multiple phone numbers and email addresses for each contact would better reflect real-world scenarios where individuals often have multiple contact points.
-7. **Authentication**: Implementing user authentication would enable features like contact ownership, access control, and personalized contact lists, significantly enhancing the application's functionality and security.
-8. **Search and Filter**: Adding search and filter capabilities would make it easier for users to find specific contacts within their list, especially as the list grows.
-9. **Pagination**: Implementing pagination would improve the application's performance by limiting the number of contacts loaded at once, making it more efficient for handling large contact lists.
-10. **Real-Time Notifications**: Implementing real-time notifications for contact updates would ensure that users are informed immediately of any changes to their contacts' information.
-11. **WebSockets in History Page**: Introducing WebSockets in the history page would enable real-time updates of contact history, providing users with a more dynamic and interactive experience.
-12. **Rate Limiting**: Implementing rate limiting on API endpoints would prevent abuse and ensure the application's stability under high traffic or malicious activity, enhancing the overall security and performance of the application.
-
-By addressing these areas, the Contacts Application can be transformed into a more comprehensive, user-friendly, and feature-rich tool for managing contacts.
