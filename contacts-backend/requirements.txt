@@ -1,0 +1,12 @@
+fastapi[standard]
+sqlalchemy
+alembic
+psycopg2
+psycopg2-binary
+uvicorn
+pydantic
+pydantic-settings
+python-multipart
+websockets
+redis
+python-dotenv
