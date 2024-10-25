@@ -67,7 +67,7 @@ async def startup_event():
 @app.on_event("shutdown")
 async def shutdown_event():
     for task in background_tasks:
-        logger.info('Canceling background task')
+        logger.info("Canceling background task")
         task.cancel()
         await task
 
@@ -86,7 +86,3 @@ async def unicorn_exception_handler(_: Request, exc: IntegrityError):
         status_code=400,
         content={"message": f"Oops! {name.title()} already exists"},
     )
-
-
-# polling_thread = threading.Thread(target=poll_for_changes, daemon=True)
-# polling_thread.start()

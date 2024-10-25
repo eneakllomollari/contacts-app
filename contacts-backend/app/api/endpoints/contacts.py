@@ -16,6 +16,7 @@ from app.crud.contact import (
     delete_contact,
     get_contact,
 )
+from app.db.session import SessionLocal
 from app.schemas.contact import ContactCreate, ContactUpdate, Contact
 
 logger = logging.getLogger(__name__)
@@ -77,9 +78,14 @@ def delete_contact_api(contact_id: int, db: Session = Depends(get_db)):
 
 
 @router.websocket("")
-async def websocket_endpoint(websocket: WebSocket, db: Session = Depends(get_db)):
+async def websocket_endpoint(websocket: WebSocket):
     await manager.connect(websocket)
-    message = utils.to_json(get_contacts(db))
+    db = SessionLocal()
+    try:
+        message = utils.to_json(get_contacts(db))
+    finally:
+        db.close()
+
     await manager.broadcast(message)
     while True:
         await asyncio.sleep(2)

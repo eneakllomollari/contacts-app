@@ -61,7 +61,7 @@ const ContactList = () => {
     try {
       await axios.delete(`/contacts/${id}`);
       toast.success("Contact deleted successfully");
-      fetchContacts();
+      // fetchContacts();
     } catch (error) {
       toast.error(`Error deleting contact: ${error.response?.data?.message || "Unknown"}`);
     } finally {
