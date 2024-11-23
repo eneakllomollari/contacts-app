@@ -1,6 +1,7 @@
 import asyncio
 import logging
 
+import logfire
 from fastapi import FastAPI, APIRouter, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -21,6 +22,11 @@ app = FastAPI(
     version=settings.VERSION,
     summary="FastAPI-based backend for managing contacts",
 )
+logfire.configure(environment=settings.MODE, service_name="contacts-api")
+logfire.instrument_fastapi(app)
+logfire.instrument_redis()
+logfire.instrument_system_metrics()
+logfire.instrument_pydantic()
 
 background_tasks = []
 

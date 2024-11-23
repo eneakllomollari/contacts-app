@@ -10,3 +10,8 @@ python-multipart
 websockets
 redis
 python-dotenv
+logfire[fastapi]
+logfire[psycopg2]
+logfire[redis]
+logfire[sqlalchemy]
+logfire[system-metrics]
